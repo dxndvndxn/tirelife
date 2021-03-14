@@ -1,0 +1,43 @@
+.main__filter-selects{
+  background: rgba(234, 234, 234, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 38px 41px;
+  @include fl(bet);
+  @extend %pale-grey-border;
+}
+.main__filter-tab{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 72px;
+  background: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+.main__filter-tab-active{
+  @extend %pale-grey-border;
+  background: rgba(234, 234, 234, 0.15);
+  backdrop-filter: blur(10px);
+}
+.main__filter-tab-nonactive{
+  @extend %pale-black-border;
+  background: rgba(54, 54, 54, 0.25);
+  backdrop-filter: blur(10px);
+}
+.main__filter-tabs{
+  @include fl(st);
+}
+.main__filter-wrap{
+  display: flex;
+}
+.main__front{
+  height: calc(100vh - 106px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__filter{
+  width: 100%;
+}
+

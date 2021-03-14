@@ -1,0 +1,18 @@
+@mixin fl($how){
+  display: flex;
+  @if $how == c {
+    justify-content: center;
+  }
+  @if $how == bet {
+    justify-content: space-between;
+  }
+  @if $how == col {
+    flex-direction: column;
+  }
+  @if $how == alC {
+    align-items: center;
+  }
+  @if $how == st {
+    justify-content: flex-start;
+  }
+}

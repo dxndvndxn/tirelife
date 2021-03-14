@@ -1,0 +1,17 @@
+/resources/nuxt_tirelife/node_modules
+/resources/nuxt_tirelife/.nuxt
+/resources/nuxt_tirelife/logs
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Project exclude paths
+/node_modules/

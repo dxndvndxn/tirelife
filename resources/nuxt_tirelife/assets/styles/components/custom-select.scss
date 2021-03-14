@@ -1,0 +1,22 @@
+.custom-select{
+  padding: 17px 23px 16px;
+  @include fl(bet);
+}
+
+.custom-select_white{
+  background: #fff;
+  width: 200px;
+  box-sizing: border-box;
+}
+.custom-select__arrow{
+  width: 18px;
+  height: 11px;
+  position: relative;
+  cursor: pointer;
+}
+.custom-select__arrow_black{
+  @include arrow(#000, 50%, 50%, -45deg, 50%, 0px, 45deg, 3px, 100%)
+}
+.custom-select__arrow_black-active{
+  @include arrow(#000, 50%, 50%, -135deg, 50%, 0px, 135deg, 3px, 100%)
+}

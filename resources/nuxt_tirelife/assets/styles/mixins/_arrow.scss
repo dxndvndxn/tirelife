@@ -1,0 +1,24 @@
+@mixin arrow($clr, $topB, $leftB, $degB, $topA, $rightA, $degA, $wid, $hei){
+  &:before {
+    content: '';
+    position: absolute;
+    background: $clr;
+    top: $topB;
+    left: $leftB;
+    transform: rotate($degB);
+    width: $wid;
+    height: $hei;
+    transition: all .2s ease;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    background: $clr;
+    top: $topA;
+    right: $rightA;
+    transform: rotate($degA);
+    width: $wid;
+    height: $hei;
+    transition: all .2s ease;
+  }
+}

@@ -1,0 +1,32 @@
+// Глобальные стили
+@import "variables/variables";
+@import "classes/core";
+@import "~normalize-scss/sass/normalize";
+@include normalize();
+
+// Миксины
+@import "mixins/flex";
+@import "mixins/arrow";
+
+// Extends
+@import "extends/extends";
+
+// Компоненты
+@import "components/header";
+@import "components/custom-select";
+
+// Views
+@import "views/index";
+#app{
+  font-family: 'Scada', sans-serif;
+  ul{
+    list-style: none;
+  }
+  background-image: url('~assets/imgs/car-4048220.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed, scroll;
+  width: 100%;
+  height: 100vh;
+}

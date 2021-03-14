@@ -1,0 +1,23 @@
+{
+  "name": "tirelife",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "myDev": "cross-env NODE_ENV=development nuxt",
+    "dev": "nuxt --hot",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "nuxt": "^2.14.12"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "fibers": "^5.0.0",
+    "normalize-scss": "^7.0.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
+  }
+}

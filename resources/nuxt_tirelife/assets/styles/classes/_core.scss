@@ -1,0 +1,22 @@
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.active-link{
+  position: relative;
+  &:before{
+    position: absolute;
+    content: '';
+    bottom: -9px;
+    left: 0;
+    background: $red;
+    width: 70%;
+    height: 1.5px;
+    transition: all .2s ease-in;
+  }
+  &:hover{
+    &:before{
+      width: 100%;
+    }
+  }
+}
