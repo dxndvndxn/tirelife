@@ -25,4 +25,12 @@ header{
 }
 .header__icons{
   @include fl(alC);
+  width: 115px;
+  justify-content: space-between;
+}
+.header__wrap{
+  display: flex;
+}
+.header__icon{
+  cursor: pointer;
 }

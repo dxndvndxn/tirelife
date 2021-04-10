@@ -7,26 +7,42 @@
       </div>
     </div>
     <div class="main__filter-selects">
-      <div class="main__filter-select" v-for="(select, i) in filterData">
+      <div class="main__filter-select" v-if="activeTab" v-for="(select, i) in filterTires">
         <Select
-          @parentSelectHandler="selectHandler"
+          @parentSelectHandler="selectTire"
           :active="select.active"
+          :keyBitch="i"
+          :params="select.params"
+          :word="select.name"
+          :classActive="['custom-select__arrow_black-active', 'custom-select__arrow_black']"
+          :className="'custom-select_white'"
+        />
+      </div>
+      <div class="main__filter-select" v-if="!activeTab" v-for="(select, i) in filterDisks">
+        <Select
+          @parentSelectHandler="selectDisk"
+          :active="select.active"
+          :params="select.params"
           :keyBitch="i"
           :word="select.name"
           :classActive="['custom-select__arrow_black-active', 'custom-select__arrow_black']"
           :className="'custom-select_white'"
         />
-
       </div>
+    </div>
+    <div class="main__filter-btn f-end">
+      <Button :word="'подобрать'" :width="'w-200'" :fz="'f-18'"/>
     </div>
   </div>
 </template>
 
 <script>
+import Button from "../common/Button";
 export default {
+  components: {Button},
   data: () => ({
     arrowState: 'black',
-    filterData: [
+    filterTires: [
       {
         name: 'Ширина',
         params: [
@@ -59,6 +75,48 @@ export default {
         active: false
       }
     ],
+    filterDisks: [
+      {
+        name: 'Ширина',
+        params: [12, 33, 44, 93, 54],
+        active: false
+      },
+      {
+        name: 'Диаметр',
+        params: [
+          19, 20, 21, 23, 35,
+        ],
+        active: false
+      },
+      {
+        name: 'Вылет',
+        params: [
+          19, 20, 21, 23, 35,
+        ],
+        active: false
+      },
+      {
+        name: 'DIA',
+        params: [
+          19, 20, 21, 23, 35,
+        ],
+        active: false
+      },
+      {
+        name: 'Болты',
+        params: [
+          19, 20, 21, 23, 35,
+        ],
+        active: false
+      },
+      {
+        name: 'PCD',
+        params: [
+          19, 20, 21, 23, 35,
+        ],
+        active: false
+      },
+    ],
     activeTab: true
   }),
   computed: {
@@ -72,8 +130,20 @@ export default {
     }
   },
   methods: {
-    selectHandler(key){
-      this.filterData[key].active = !this.filterData[key].active
+    doActiveList(arr, activeKey) {
+      arr.forEach((el, i) => {
+        if (i === activeKey && el.active) {
+          el.active = !el.active
+        } else {
+          el.active = i === activeKey
+        }
+      })
+    },
+    selectTire(key){
+      this.doActiveList(this.filterTires, key)
+    },
+    selectDisk(key){
+      this.doActiveList(this.filterDisks, key)
     },
     clickTab(tab){
       this.activeTab = tab === 'Tires' ? true : false

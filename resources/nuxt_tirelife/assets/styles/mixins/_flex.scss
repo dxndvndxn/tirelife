@@ -15,4 +15,7 @@
   @if $how == st {
     justify-content: flex-start;
   }
+  @if $how == end {
+    justify-content: flex-end;
+  }
 }

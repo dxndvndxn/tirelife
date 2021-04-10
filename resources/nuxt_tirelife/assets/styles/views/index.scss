@@ -2,8 +2,14 @@
   background: rgba(234, 234, 234, 0.15);
   backdrop-filter: blur(10px);
   padding: 38px 41px;
-  @include fl(bet);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 38px;
+  grid-row-gap: 38px;
   @extend %pale-grey-border;
+}
+.main__filter-btn{
+  padding: 38px 41px;
 }
 .main__filter-tab{
   color: #fff;
@@ -38,6 +44,12 @@
   align-items: center;
 }
 .main__filter{
-  width: 100%;
+  width: 1000px;
+  margin: 275px 0 auto;
+}
+.main__filter-select{
+  &:nth-child(5){
+    grid-column: 2/3;
+  }
 }
 

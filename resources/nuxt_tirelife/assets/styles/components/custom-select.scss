@@ -1,6 +1,14 @@
 .custom-select{
   padding: 17px 23px 16px;
-  @include fl(bet);
+  position: relative;
+}
+.custom-select__item{
+  cursor: pointer;
+  padding-left: 23px;
+  margin: 17px 0;
+}
+.custom-select__child_active{
+  border-bottom: .3px solid $red;
 }
 
 .custom-select_white{
@@ -20,3 +28,32 @@
 .custom-select__arrow_black-active{
   @include arrow(#000, 50%, 50%, -135deg, 50%, 0px, 135deg, 3px, 100%)
 }
+.custom-select__list{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  left: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 150px;
+  z-index: 9999;
+}
+@keyframes showListt {
+  from{
+    height: 0px;
+  }
+  to{
+    height: 150px;
+  }
+}
+.showList{
+  animation: showListt .3s;
+  animation-fill-mode: forwards;
+}
+.hideList{
+  animation: showListt .3s reverse;
+  animation-fill-mode: forwards;
+}
+
